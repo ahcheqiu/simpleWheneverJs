@@ -1,4 +1,4 @@
-Whenever = function(fun){
+SimpleWhenever = function(fun){
     this.resolve = [];
     this.resolveOnce = [];
     this.reject = [];
@@ -7,8 +7,8 @@ Whenever = function(fun){
     this.judge = fun;
     return this;
 };
-Whenever.prototype = {
-  yes: function (fun,once) {
+SimpleWhenever.prototype = {
+    yes: function (fun,once) {
         if (typeof fun == 'function') {
             if (this.status == 'resolve') {
                 fun();

@@ -3,18 +3,18 @@ A javascript class that allows you to watch a value.
 This is a simple version which means there are some restriction when using.
 
 # API
-## Whenever(callback)
-  Please pass in a function with returning a boolean value. When you `change` value, this `callback` will be called. And it's return value will be translate to current status of the Whenever instance. (true for `Whenever.status` = 'resolve' and false for `Whenever.status` = 'reject').This call back will be `Whenever.judge`
+## SimpleWhenever(callback)
+  Please pass in a function with returning a boolean value. When you `change` value, this `callback` will be called. And it's return value will be translate to current status of the Whenever instance. (true for `SimpleWhenever.status` = 'resolve' and false for `SimpleWhenever.status` = 'reject').This call back will be `SimpleWhenever.judge`
 ## yes(callback,once)
-  add `callback` to whenever, and will be execute whenever the `Whenever.judge` return true. If the `Whenever.status == 'resolve'`, `callback` will execute right away.If `once` equals true, this `callback` will execute only once.
+  add `callback` to whenever, and will be execute whenever the `SimpleWhenever.judge` return true. If the `SimpleWhenever.status == 'resolve'`, `callback` will execute right away.If `once` equals true, this `callback` will execute only once.
 ## no(callback,once)
-  similar to `yes` but will execute when `Whenever.judge` return false or `Whenever.status == 'reject'`.
+  similar to `yes` but will execute when `SimpleWhenever.judge` return false or `SimpleWhenever.status == 'reject'`.
 ## change(value)
-  change Whenever value.This will call `Whenever.judge`, and execute yes functions or no functions according to the return value.
-  
+  change Whenever value.This will call `SimpleWhenever.judge`, and execute yes functions or no functions according to the return value.
+
 # usage
 <pre><code>
-var w = new Whenever(function(value){
+var w = new SimpleWhenever(function(value){
   return value == 1;
 });
 w.yes(function(){
