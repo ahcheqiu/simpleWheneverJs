@@ -15,12 +15,11 @@ SimpleWhenever.prototype = {
                 if( once == true ){
                     return;
                 }
+            }
+            if( once == true ) {
+                this.resolveOnce.push(fun);
             } else {
-                if( once == true ) {
-                    this.resolveOnce.push(fun);
-                } else {
-                    this.resolve.push(fun);
-                }
+                this.resolve.push(fun);
             }
         } else {
             throw 'Param for Whenever.yes is not a function';
