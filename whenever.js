@@ -53,6 +53,7 @@ SimpleWhenever.prototype = {
             status = 'reject';
         }
         if( status != this.status ){
+            this.status = status;
             this.handle();
         }
     },
