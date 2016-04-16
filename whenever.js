@@ -46,12 +46,15 @@ SimpleWhenever.prototype = {
         return this;
     },
     change: function(value){
+        var status;
         if( this.judge(value) ){
-            this.status = 'resolve';
+            status = 'resolve';
         } else {
-            this.status = 'reject';
+            status = 'reject';
         }
-        this.handle();
+        if( status != this.status ){
+            this.handle();
+        }
     },
     handle: function() {
         var enumVar1,enumVar2;
